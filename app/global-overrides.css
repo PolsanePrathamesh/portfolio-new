@@ -1,0 +1,36 @@
+/* Override the global styles that prevent scrolling */
+html,
+body,
+#__next {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Ensure the hero section allows content to flow below it */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+/* Make sure the background doesn't prevent scrolling */
+.hero-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Ensure content below hero is visible */
+.content-below-hero {
+  position: relative;
+  z-index: 1;
+  background: black;
+  min-height: 100vh;
+}

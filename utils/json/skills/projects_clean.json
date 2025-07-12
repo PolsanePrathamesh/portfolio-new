@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "id": "highlands-brain",
+      "name": "Highlands Brain",
+      "link": "https://highlandsbrain.com",
+      "thumbnail": "/projects/Brain2.png",
+      "techstack": ["Next.js", "React", "Redux Toolkit", "React Query", "Firebase", "Tailwind CSS", "TypeScript"],
+      "details": "[existing details]"
+    },
+    {
+      "id": "sergo",
+      "name": "Sergo",
+      "link": "https://sergo.com",
+      "thumbnail": "/projects/Sergo2.png",
+      "techstack": ["Vite", "React", "TypeScript", "Material-UI", "TanStack Query"],
+      "details": "[existing details]"
+    },
+    {
+      "id": "ebco",
+      "name": "Ebco",
+      "link": "https://ebco.in",
+      "thumbnail": "/projects/Ebco2.png",
+      "techstack": ["Next.js", "React Query", "Redux", "WordPress", "Google Maps API"],
+      "details": "[existing details]"
+    },
+    {
+      "id": "mailbee",
+      "name": "MailBee",
+      "link": "https://stage.mymailbee.com",
+      "thumbnail": "/projects/MailBee2.png",
+      "techstack": ["Next.js", "NextAuth", "Redux", "React Query", "Firebase", "Razorpay"],
+      "details": "[existing details]"
+    },
+    {
+      "id": "unischool",
+      "name": "Unischool",
+      "link": "https://brain.edtech.unicoconnect.in/",
+      "thumbnail": "/projects/UniSchool2.png",
+      "techstack": ["Vue.js", "Bootstrap", "WebSockets", "Vuex", "ES6"],
+      "details": "[existing details]"
+    },
+    {
+      "id": "cense-ai",
+      "name": "Cense AI",
+      "link": "https://cense.ai/",
+      "thumbnail": "/projects/Cense2.png",
+      "techstack": ["Vue.js", "Bootstrap", "WebSockets", "Vuex", "ES6"],
+      "details": "[existing details]"
+    }
+  ]
+}

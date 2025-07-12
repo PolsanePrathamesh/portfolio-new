@@ -1,0 +1,8 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#1F2937"/>
+  <path d="M400 300L300 200H500L400 300Z" fill="#4B5563" stroke="#9CA3AF" stroke-width="2"/>
+  <path d="M300 200V400L400 500L500 400V200L400 300L300 200Z" fill="none" stroke="#9CA3AF" stroke-width="2"/>
+  <path d="M400 300V500M400 300L300 400M400 300L500 400" stroke="#9CA3AF" stroke-width="2"/>
+  <path d="M300 400H500M300 400L400 500M500 400L400 500M400 500H300" stroke="#9CA3AF" stroke-width="2"/>
+  <text x="400" y="550" font-family="Arial" font-size="24" fill="#9CA3AF" text-anchor="middle">No Preview Available</text>
+</svg>

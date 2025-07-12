@@ -1,0 +1,42 @@
+{
+    "skills": {
+      "frontend": [
+        { "name": "JavaScript", "icon": "/JavaScript.svg", "color": "#F7DF1E" },
+        { "name": "TypeScript", "icon": "/TypeScript.svg", "color": "#3178C6" },
+        { "name": "React.js", "icon": "/React.svg", "color": "#61DAFB" },
+        { "name": "Next.js", "icon": "/Next.js.svg", "color": "#ffffff" },
+        { "name": "Vue.js", "icon": "/Vue.js.svg", "color": "#4FC08D" },
+        { "name": "Redux", "icon": "/Redux.svg", "color": "#764ABC" },
+        { "name": "Zustand", "icon": "/zustand.svg", "color": "#764ABC" },
+        { "name": "Tailwind CSS", "icon": "/Tailwind CSS.svg", "color": "#06B6D4" },
+        { "name": "Webflow", "icon": "/Webflow.svg", "color": "#146EF5" },
+        { "name": "React Query", "icon": "/ReactQuery.svg", "color": "#FF4154" },
+        { "name": "GraphQL", "icon": "/GraphQL.svg", "color": "#E10098" },
+        { "name": "MUI", "icon": "/Material UI.svg", "color": "#007FFF" }
+      ],
+      "backend": [
+        { "name": "Node.js", "icon": "/Node.js.svg", "color": "#339933" },
+        { "name": "Express.js", "icon": "/Express.svg", "color": "#000000" },
+        { "name": "MongoDB", "icon": "/MongoDB.svg", "color": "#47A248" },
+        { "name": "PostgresSQL", "icon": "/PostgresSQL.svg", "color": "#336791" },
+        { "name": "Docker", "icon": "/Docker.svg", "color": "#2496ED" }
+      ],
+      "design": [
+        { "name": "Figma", "icon": "/Figma.svg", "color": "#F24E1E" }
+      ],
+      "tools": [
+        { "name": "Jest", "icon": "/Jest.svg", "color": "#C21325" },
+        { "name": "Storybook", "icon": "/Storybook.svg", "color": "#FF4785" },
+        { "name": "Git", "icon": "/Git.svg", "color": "#F05032" },
+        { "name": "GitHub", "icon": "/GitHub.svg", "color": "#444444" },
+        { "name": "GitLab", "icon": "/GitLab.svg", "color": "#FC6D26" },
+        { "name": "Bitbucket", "icon": "/BitBucket.svg", "color": "#0052CC" },
+        { "name": "JIRA", "icon": "/Jira.svg", "color": "#0052CC" },
+        { "name": "VS Code", "icon": "/VSCode.svg", "color": "#007ACC" },
+        { "name": "Postman", "icon": "/Postman.svg", "color": "#FF6C37" },
+        { "name": "Cypress", "icon": "/Cypress.svg", "color": "#aaaaaa" },
+        { "name": "Vercel", "icon": "/Vercel.svg", "color": "#000000" },
+        { "name": "Netlify", "icon": "/Netlify.svg", "color": "#00C7B7" }
+      ]
+    }
+  }
