@@ -49,7 +49,7 @@ export const TimelineReveal = ({ data }: { data: TimelineEntry[] }) => {
       variants={fadeVariants}
     >
       <div className="mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="!text-6xl md:text-4xl !mb-10 text-white dark:text-white text-center font-bold">
+        <h2 className="!text-6xl bg-black md:text-4xl !mb-10 text-white dark:text-white text-center font-bold">
           Work Experience
         </h2>
       </div>
