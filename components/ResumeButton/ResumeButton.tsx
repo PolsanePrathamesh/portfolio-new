@@ -71,14 +71,14 @@ export const ResumeButton = () => {
       }
     };
 
-    window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
@@ -145,7 +145,7 @@ export const ResumeButton = () => {
       </motion.button>
     </motion.div>
   );
-}
+};
 
 // Helper function to merge class names
 function cn(...classes: (string | boolean | undefined)[]): string {

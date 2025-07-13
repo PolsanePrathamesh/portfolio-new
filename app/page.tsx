@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection/HeroSection";
 import Project from "@/components/Project/Project";
 import { Testimonials } from "@/components/Testimonials/Testimonials";
 import { TimelineDemo } from "@/components/Timeline/Timeline";
+import { LinkPreview } from "@/components/ui/link-preview";
 import AnimatedCursor from "react-animated-cursor";
 
 export default function Home() {
@@ -13,12 +14,20 @@ export default function Home() {
       content: (
         <div>
           <div className="flex justify-between items-start mb-2">
-            <p className="text-lg font-medium text-neutral-300 dark:text-neutral-300 tracking-wide">
-              Feb 2024 - Present | Software Engineer | Mumbai
-            </p>
+            <div className="flex items-center gap-2">
+              <p className="text-lg font-medium text-neutral-300 dark:text-neutral-300 tracking-wide">
+                Feb 2024 - Present | Software Engineer |
+                <LinkPreview
+                  url="https://unicoconnect.com"
+                  className="!text-white hover:!text-white/80 !font-medium !text-lg !ml-1"
+                >
+                  Unico Connect
+                </LinkPreview>
+              </p>
+            </div>
           </div>
           <div className="border-b border-neutral-700 !mb-4 pb-2"></div>
-          <ul className="!space-y-3 list-disc list-inside !mb-8">
+          <div className="!space-y-4 !mb-2">
             <div className="flex flex-wrap gap-2">
               <span className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
                 Next.js
@@ -57,61 +66,84 @@ export default function Home() {
                 Webflow
               </span>
             </div>
-            <li className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
-              Spearheaded development of UniSchool SaaS platform (Next.js, Hero
-              UI), enabling digital compliance and dashboards; accelerated
-              report processes by 65%.
-            </li>
-            <li className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
-              Led Highlands Brain dashboard development with Next.js, React
-              Query, Storybook and ShadCn and AI-powered chat, increasing
-              productivity by 30% through AI-driven features along with
-              Storybook and Jest integration.
-            </li>
-            <li className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
-              Revamped Ebco's legacy website into a responsive e-commerce
-              platform with Next.js, MUI, Redux, and CC Avenue, driving a 23%
-              revenue increase, single-handedly managing the entire development
-              process.
-            </li>
-            <li className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
-              Independently developed a Gmail plugin with mail merge, automated
-              follow-ups, and pixel tracking along with direct client
-              coordination.
-            </li>
-            <li className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
-              Mentored junior developers, enforcing best coding practices and
-              introducing AI integration techniques.
-            </li>
-          </ul>
-          <div className="grid grid-cols-2 gap-4">
+            <p className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
+              At Unico Connect, I spearheaded the development of the{" "}
+              <LinkPreview
+                url="https://brain.edtech.unicoconnect.in/"
+                className="border-b-2 border-neutral-300 !px-1 text-white hover:!text-white/80"
+              >
+                UniSchool SaaS platform
+              </LinkPreview>{" "}
+              using Next.js and Hero UI, enabling digital compliance and
+              dashboards, accelerating report processes by 65%. I led the
+              development of the{" "}
+              <LinkPreview
+                url="https://www.highlandsbrain.com/"
+                className="border-b-2 border-neutral-300 !px-1 text-white hover:!text-white/80"
+              >
+                Highlands Brain dashboard
+              </LinkPreview>{" "}
+              with Next.js, React Query, Storybook, ShadCn, and an AI-powered
+              chat, increasing productivity by 30% through AI-driven features
+              and testing integrations. I revamped{" "}
+              <span className="border-b-2 border-neutral-300 !px-1 ">
+                <LinkPreview
+                  url="https://ebco.in"
+                  className="font-bold text-white"
+                >
+                  Ebco
+                </LinkPreview>{" "}
+              </span>
+              's legacy website into a responsive e-commerce platform,{" "}
+              <LinkPreview
+                url="https://ebco.in"
+                className="border-b-2 border-neutral-300 !px-1 text-white hover:!text-white/80"
+              >
+                Ebco
+              </LinkPreview>
+              , using Next.js, MUI, Redux, and CC Avenue, driving a 23% revenue
+              increase while managing the entire process independently. I also
+              developed a{" "}
+              <LinkPreview
+                url="https://stage.mymailbee.com/"
+                className="border-b-2 border-neutral-300 !px-1 text-white hover:!text-white/80"
+              >
+                Gmail plugin
+              </LinkPreview>{" "}
+              with mail merge, automated follow-ups, and pixel tracking,
+              coordinating directly with clients, and mentored junior developers
+              to enforce best coding practices and introduce AI integration
+              techniques.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-4 !pt-4">
             <img
               src="/projects/Brain2.png"
               alt="highlands brain template"
               width={500}
-              height={500}
-              className="h-16 w-[20rem] rounded-lg object-contain object-center shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              height={125}
+              className="h-8 w-[20rem] rounded-lg object-contain object-center  md:h-20 lg:h-30"
             />
             <img
               src="/projects/Sergo.png"
               alt="sergo template"
               width={500}
-              height={500}
-              className="h-16 w-[20rem] rounded-lg object-contain object-center shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              height={125}
+              className="h-8 w-[20rem] rounded-lg object-contain object-center  md:h-20 lg:h-30"
             />
             <img
               src="/projects/Ebco.png"
               alt="ebco template"
               width={500}
-              height={500}
-              className="h-16 w-[20rem] rounded-lg object-contain object-center shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              height={125}
+              className="h-8 w-[20rem] rounded-lg object-contain object-center  md:h-20 lg:h-30"
             />
             <img
               src="/projects/MailBee.png"
               alt="mailbee template"
               width={500}
-              height={500}
-              className="h-16 w-[20rem] rounded-lg object-contain object-center shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              height={125}
+              className="h-8 w-[20rem] rounded-lg object-contain object-center  md:h-20 lg:h-30"
             />
           </div>
         </div>
@@ -122,13 +154,20 @@ export default function Home() {
       content: (
         <div>
           <div className="flex justify-between items-start mb-2">
-            <p className="text-lg font-medium text-neutral-300 dark:text-neutral-300 tracking-wide">
-              June 2022 - Jan 2024 | Associate Software Engineer | Mumbai
-            </p>
+            <div className="flex items-center gap-2">
+              <p className="text-lg font-medium text-neutral-300 dark:text-neutral-300 tracking-wide">
+                June 2022 - Jan 2024 | Associate Software Engineer |
+                <LinkPreview
+                  url="https://codearray.tech"
+                  className="!text-white hover:!text-white/80 !font-medium !text-lg"
+                >
+                  Codearray Technologies Pvt Ltd
+                </LinkPreview>
+              </p>
+            </div>
           </div>
           <div className="border-b border-neutral-700 !mb-4 pb-2"></div>
-
-          <ul className="!space-y-3 list-disc list-inside !mb-8">
+          <div className="!space-y-3 !mb-8">
             <div className="flex flex-wrap gap-2 !mb-4">
               <span className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
                 Next.js
@@ -138,6 +177,9 @@ export default function Home() {
               </span>
               <span className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
                 GraphQL
+              </span>
+              <span className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
+                D3
               </span>
               <span className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
                 Tailwind CSS
@@ -155,26 +197,63 @@ export default function Home() {
                 Postman
               </span>
             </div>
-            <li className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
-              Architected a SaaS admin portal for CENSE AI using React, GraphQL,
-              and Tailwind CSS, improving customer retention by 40%.
-            </li>
-            <li className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
-              Built a WhatsApp UI and payment gateway integration, enhancing
-              operational efficiency by 15%.
-            </li>
-            <li className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
-              Collaborated with UX designers to implement accessible, responsive
-              interfaces, reducing user complaints by 15%.
-            </li>
-          </ul>
+            <p className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
+              At Codearray Technologies Pvt Ltd, I architected a SaaS admin
+              portal for{" "}
+              <LinkPreview
+                url="https://cense.ai"
+                className="border-b-2 border-neutral-300 !px-1 text-white hover:!text-white/80"
+              >
+                CENSE AI
+              </LinkPreview>{" "}
+              using React, GraphQL, and Tailwind CSS, improving customer
+              retention by 40%, and built a WhatsApp UI with payment gateway
+              integration, enhancing operational efficiency by 15%. I
+              collaborated with UX designers to implement accessible, responsive
+              interfaces, reducing user complaints by 15%. Revamped{" "}
+              <LinkPreview
+                url="https://codearray.tech"
+                className="border-b-2 border-neutral-300 !px-1 text-white hover:!text-white/80"
+              >
+                CodeArray
+              </LinkPreview>{" "}
+              's website using Nuxt JS which was a responsive web service
+              platform.{" "}
+              <LinkPreview
+                url="https://retailigence.com"
+                className="border-b-2 border-neutral-300 !px-1 text-white hover:!text-white/80"
+              >
+                RETAILIGENCE
+              </LinkPreview>{" "}
+              is an advanced AI-powered suite designed to optimize retail
+              operations by clustering stores, curating assortments, allocating
+              space to categories, and tracking and resolving in-store
+              operational issues efficiently.I worked on a dashboard using
+              Vue.js, Nuxt.js, JavaScript, and D3, enhancing data visualization
+              and operational insights.
+            </p>
+          </div>
           <div className="grid grid-cols-2 gap-4">
             <img
               src="/projects/Cense.png"
               alt="cense template"
               width={500}
-              height={500}
-              className="h-16 w-[20rem] rounded-lg object-contain object-center shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              height={125}
+              className="h-8 w-[20rem] rounded-lg object-contain object-center  md:h-20 lg:h-30"
+            />
+            <img
+              src="/projects/codearray.png"
+              alt="codearray template"
+              width={500}
+              height={125}
+              className="h-8 w-[20rem] rounded-lg object-contain object-center  md:h-20 lg:h-30"
+            />
+            <img
+              src="/projects/retail.png"
+              alt="retail template"
+              width={500}
+              height={125}
+              className="h-8 w-[20rem] rounded-lg object-contain object-center  md:h-20 lg:h-30"
             />
           </div>
         </div>
@@ -184,10 +263,12 @@ export default function Home() {
       title: "PPM VALUE",
       content: (
         <div className="space-y-4">
-          <p className="text-lg font-medium text-neutral-300 dark:text-neutral-300 tracking-wide border-b border-neutral-700 !mb-4 !pb-2">
-            Sept 2021 - Jan 2022 | Javascript Developer Intern | Remote
-          </p>
-          <ul className="space-y-3 list-disc list-inside">
+          <div className="flex items-center gap-2 border-b border-neutral-700 !mb-4 !pb-2">
+            <p className="text-lg font-medium text-neutral-300 dark:text-neutral-300 tracking-wide">
+              Sept 2021 - Jan 2022 | Javascript Developer Intern | PPM VALUE
+            </p>
+          </div>
+          <div className="space-y-3">
             <div className="flex flex-wrap gap-2 !mb-4">
               <span className="bg-red-900/30 text-red-400 text-xs !px-2 !py-1 rounded-full border border-red-800/50">
                 Javascript
@@ -205,35 +286,17 @@ export default function Home() {
                 Bootstrap
               </span>
             </div>
-            <li className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
-              <span className="font-medium text-neutral-200">
-                Quiz Application:
-              </span>{" "}
-              Built with React.js featuring dynamic question rendering,
-              real-time progress tracking, and timer-based completion with
-              auto-submission.
-            </li>
-            <li className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
-              <span className="font-medium text-neutral-200">
-                Learning Management System:
-              </span>{" "}
-              Developed a comprehensive LMS with user authentication, role-based
-              access control, and interactive course management.
-            </li>
-            <li className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
-              <span className="font-medium text-neutral-200">
-                Technical Implementation:
-              </span>{" "}
-              Implemented JWT authentication, protected routes, and integrated
-              RESTful APIs with error handling and validation.
-            </li>
-            <li className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
-              <span className="font-medium text-neutral-200">
-                Technologies:
-              </span>{" "}
-              React.js, Node.js, MongoDB, Express, JWT, Tailwind CSS, Git
-            </li>
-          </ul>
+            <p className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
+              At PPM VALUE, I built a with React.js, featuring dynamic question
+              rendering, real-time progress tracking, and timer-based completion
+              with auto-submission, and developed a with user authentication,
+              role-based access control, and interactive course management. I
+              implemented technical solutions including JWT authentication,
+              protected routes, and integrated RESTful APIs with error handling
+              and validation, utilizing technologies like React.js, Node.js,
+              MongoDB, Express, JWT, Tailwind CSS, and Git.
+            </p>
+          </div>
         </div>
       ),
     },
@@ -241,10 +304,18 @@ export default function Home() {
       title: "Emtron Technologies",
       content: (
         <div className="space-y-4">
-          <p className="text-lg font-medium text-neutral-300 dark:text-neutral-300 tracking-wide border-b border-neutral-700 !mb-4 !pb-2">
-            Dec 2019 | Web Designer | Mumbai
-          </p>
-          <ul className="space-y-3 list-disc list-inside">
+          <div className="flex items-center gap-2 border-b border-neutral-700 !mb-4 !pb-2">
+            <p className="text-lg font-medium text-neutral-300 dark:text-neutral-300 tracking-wide">
+              Dec 2019 | Web Designer |
+              <LinkPreview
+                url="https://emtronglobal.com"
+                className="!text-white hover:!text-white/80 !font-medium !text-lg"
+              >
+                Emtron Technologies
+              </LinkPreview>
+            </p>
+          </div>
+          <div className="space-y-3">
             <div className="flex flex-wrap gap-2 !mb-4">
               <span className="bg-green-900/30 text-green-400 text-xs !px-2 !py-1 rounded-full border border-green-800/50">
                 HTML
@@ -259,40 +330,28 @@ export default function Home() {
                 PostgresSQL
               </span>
             </div>
-            <li className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
-              <span className="font-medium text-neutral-200">
-                Game Search Application:
-              </span>{" "}
-              Developed a React-based platform for searching and filtering games
-              with real-time API integration.
-            </li>
-            <li className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
-              <span className="font-medium text-neutral-200">
-                Key Contributions:
-              </span>{" "}
-              Implemented responsive design, reduced page load time by 40%, and
-              integrated external gaming APIs.
-            </li>
-            <li className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
-              <span className="font-medium text-neutral-200">
-                Technologies:
-              </span>{" "}
-              React.js, JavaScript (ES6+), Bootstrap, RESTful APIs, Git
-            </li>
-          </ul>
+            <p className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
+              At Emtron Technologies, I developed a Game Search Application
+              using React, enabling searching and filtering games with real-time
+              API integration, implementing responsive design, reducing page
+              load time by 40%, and integrating external gaming APIs, utilizing
+              technologies like React.js, JavaScript (ES6+), Bootstrap, RESTful
+              APIs, and Git.
+            </p>
+          </div>
         </div>
       ),
     },
-
     {
       title: "Graduation",
       content: (
         <div>
-          <p className="text-lg font-medium text-neutral-300 dark:text-neutral-300 tracking-wide border-b border-neutral-700 !mb-4 !pb-2">
-            2018-2022 | Electronics and Telecommunication Engineering
-          </p>
+          <div className="flex items-center gap-2 border-b border-neutral-700 !mb-4 !pb-2">
+            <p className="text-lg font-medium text-neutral-300 dark:text-neutral-300 tracking-wide">
+              2018-2022 | Electronics and Telecommunication Engineering |
+            </p>
+          </div>
           <div className="border-b border-neutral-700 !mb-4 pb-2"></div>
-
           <ul className="space-y-3 list-disc list-inside">
             <div className="flex flex-wrap gap-2 !mb-4">
               <span className="bg-orange-900/30 text-orange-400 text-xs !px-2 !py-1 rounded-full border border-orange-800/50">

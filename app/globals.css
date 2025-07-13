@@ -154,3 +154,7 @@ html {
   padding-top: 100vh; /* Push content below the hero section */
   margin-top: -100vh; /* Pull content back up to overlap with hero */
 }
+
+.globeee canvas {
+  position: relative !important;
+}
