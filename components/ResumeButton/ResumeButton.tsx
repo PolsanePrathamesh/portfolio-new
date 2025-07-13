@@ -1,13 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Download, Check, Loader2 } from "lucide-react";
+import { Download, Loader2, Check, ArrowUp } from "lucide-react";
 
-type ButtonState = "idle" | "loading" | "success";
+type ButtonState = "idle" | "loading" | "success" | "error";
 
-export function ResumeButton() {
+export const ResumeButton = () => {
   const [state, setState] = useState<ButtonState>("idle");
+
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleDownload = async () => {
     try {
@@ -60,19 +62,56 @@ export function ResumeButton() {
     }
   };
 
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > window.innerHeight) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <motion.div
-      className="fixed bottom-8 right-8 z-50"
+      className="fixed bottom-8 right-8 z-50 flex flex-col gap-3 items-end"
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 20 }}
       transition={{ duration: 0.5, delay: 0.5 }}
     >
+      <AnimatePresence>
+        {isVisible && (
+          <motion.button
+            onClick={scrollToTop}
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800/80 backdrop-blur-sm text-white shadow-lg hover:bg-gray-700/90 transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.2 }}
+            aria-label="Scroll to top"
+          >
+            <ArrowUp className="w-5 h-5" />
+          </motion.button>
+        )}
+      </AnimatePresence>
       <motion.button
         onClick={handleDownload}
         disabled={state !== "idle"}
         className={cn(
-          "relative overflow-hidden bg-gradient-to-r bg-blue-500  text-white font-semibold !py-1 !px-2 rounded-full shadow-lg",
+          "relative overflow-hidden bg-gradient-to-r bg-blue-500  text-white font-semibold !py-1.5 !px-4 rounded-full shadow-lg",
           "flex items-center gap-3 whitespace-nowrap",
           "transform transition-all duration-300",
           state === "idle" &&

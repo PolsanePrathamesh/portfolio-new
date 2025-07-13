@@ -16,6 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import ScrollFloat from "../ui/Scroll-float";
 
 interface FormData {
   name: string;
@@ -55,17 +56,25 @@ export default function ContactForm() {
   const isInView = useInView(sectionRef, { once: false }); // Set once: false for fade-out
 
   return (
-    <div className="relative w-full py-12 md:py-24 bg-black !pb-5">
+    <div className="relative w-full py-12 md:py-24 bg-black !pb-5 z-10 ">
       <div className="w-full mx-auto relative z-10 px-4">
-        <motion.h2
+        <motion.div
           ref={sectionRef}
           className="text-6xl font-bold text-white !mb-8 text-center"
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={itemVariants}
         >
-          Contact Us{" "}
-        </motion.h2>
+          <ScrollFloat
+            animationDuration={1}
+            ease="back.inOut(2)"
+            scrollStart="center bottom+=50%"
+            scrollEnd="bottom bottom-=40%"
+            stagger={0.03}
+          >
+            Contact Us
+          </ScrollFloat>
+        </motion.div>
         <motion.div
           ref={sectionRef}
           className="flex flex-col md:flex-row gap-8 justify-center items-start"

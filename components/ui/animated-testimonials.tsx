@@ -2,8 +2,7 @@
 
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 type Testimonial = {
   quote: string;
@@ -39,9 +38,13 @@ export const Testimonials = ({
     }
   }, [autoplay]);
 
-  const randomRotateY = () => {
-    return Math.floor(Math.random() * 21) - 10;
-  };
+  // Generate consistent rotation values based on index to prevent hydration mismatch
+  const getRotationForIndex = useMemo(() => {
+    return (index: number) => {
+      // Simple hash function to get a consistent rotation between -10 and 10 degrees
+      return ((index * 13) % 21) - 10;
+    };
+  }, []);
   return (
     <div className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
       <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2">
@@ -54,13 +57,13 @@ export const Testimonials = ({
                   initial={{
                     opacity: 0,
                     scale: 0.9,
-                    rotate: randomRotateY(),
+                    rotate: getRotationForIndex(index),
                     zIndex: 0,
                   }}
                   animate={{
                     opacity: isActive(index) ? 1 : 0.7,
                     scale: isActive(index) ? 1 : 0.95,
-                    rotate: isActive(index) ? 0 : randomRotateY(),
+                    rotate: isActive(index) ? 0 : getRotationForIndex(index),
                     zIndex: isActive(index)
                       ? 40
                       : testimonials.length + 2 - index,
@@ -69,7 +72,7 @@ export const Testimonials = ({
                   exit={{
                     opacity: 0,
                     scale: 0.9,
-                    rotate: randomRotateY(),
+                    rotate: getRotationForIndex(index),
                   }}
                   transition={{
                     duration: 0.4,

@@ -6,6 +6,7 @@ import {
   motion,
 } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
+import ScrollFloat from "./Scroll-float";
 
 interface TimelineEntry {
   title: string;
@@ -41,17 +42,23 @@ export const TimelineReveal = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <motion.div
-      className="w-full bg-black dark:bg-neutral-950 font-sans md:px-10 !p-20"
+      className="w-full bg-black dark:bg-neutral-950 font-sans md:px-10 !p-20 !pt-0"
       ref={containerRef}
       initial="hidden"
       animate="visible"
       exit="exit"
       variants={fadeVariants}
     >
-      <div className="mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="!text-6xl bg-black md:text-4xl !mb-10 text-white dark:text-white text-center font-bold">
+      <div className="mx-auto !pb-20 !px-4 md:!px-8 lg:!px-10">
+        <ScrollFloat
+          animationDuration={1}
+          ease="back.inOut(2)"
+          scrollStart="center bottom+=50%"
+          scrollEnd="bottom bottom-=40%"
+          stagger={0.03}
+        >
           Work Experience
-        </h2>
+        </ScrollFloat>
       </div>
 
       <div ref={ref} className="relative mx-auto pb-20">

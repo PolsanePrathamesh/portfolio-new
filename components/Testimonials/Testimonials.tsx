@@ -2,6 +2,7 @@
 import { Testimonials as AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { useRef } from "react"; // useEffect is not needed for this approach
 import { motion, Variants, useAnimation } from "framer-motion";
+import ScrollFloat from "../ui/Scroll-float";
 
 export function Testimonials() {
   const testimonials = [
@@ -70,8 +71,8 @@ export function Testimonials() {
 
   // The parent div is no longer a motion.div
   return (
-    <div className="bg-black w-full flex flex-col items-center justify-center px-4 py-20 font-sans antialiased md:px-8 lg:px-12 min-h-screen">
-      <motion.h2
+    <div className="bg-black w-full flex flex-col items-center justify-center px-4 py-20 font-sans antialiased md:px-8 lg:px-12 min-h-screen z-10 relative">
+      <motion.div
         className="text-6xl font-bold text-white dark:text-white text-center"
         variants={fadeInOutVariants}
         initial="hidden" // Start hidden
@@ -80,8 +81,16 @@ export function Testimonials() {
         viewport={{ amount: 0.5, once: false }} // Trigger when 50% of heading is visible/invisible
         animate={headingControls} // Animate using the specific controls
       >
-        Testimonials
-      </motion.h2>
+        <ScrollFloat
+          animationDuration={1}
+          ease="back.inOut(2)"
+          scrollStart="center bottom+=50%"
+          scrollEnd="bottom bottom-=40%"
+          stagger={0.03}
+        >
+          Testimonials
+        </ScrollFloat>
+      </motion.div>
 
       <motion.div
         className="mx-auto max-w-sm font-sans antialiased md:max-w-4xl md:px-8 lg:px-12 !p-20"

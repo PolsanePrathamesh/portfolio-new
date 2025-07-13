@@ -5,6 +5,7 @@ import { WobbleCard } from "../ui/wobble-card";
 import skillsData from "@/utils/json/skills/skills.json";
 import Image from "next/image";
 import { Cover } from "../ui/Cover";
+import ScrollFloat from "../ui/Scroll-float";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -41,17 +42,15 @@ const About = () => {
       <div className=" mx-auto px-4">
         <div className="mx-auto">
           <div className="w-full flex justify-center mb-16">
-            <Cover className="!px-6 !py-2">
-              <motion.h2
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.5 }}
-                variants={fadeInUp}
-                className="text-4xl font-bold text-center"
-              >
-                Skills & Expertise
-              </motion.h2>
-            </Cover>
+            <ScrollFloat
+              animationDuration={1}
+              ease="back.inOut(2)"
+              scrollStart="center bottom+=50%"
+              scrollEnd="bottom bottom-=40%"
+              stagger={0.03}
+            >
+              Skills & Expertise
+            </ScrollFloat>
           </div>
 
           {/* Skills by Category */}

@@ -7,6 +7,7 @@ import {
   useSpring,
   MotionValue,
 } from "motion/react";
+import ScrollFloat from "./Scroll-float";
 
 export const HeroParallax = ({
   products,
@@ -73,7 +74,7 @@ export const HeroParallax = ({
             <ProductCard
               product={product}
               translate={translateX}
-              key={product.title}
+              key={product.id}
             />
           ))}
         </motion.div>
@@ -82,7 +83,7 @@ export const HeroParallax = ({
             <ProductCard
               product={product}
               translate={translateXReverse}
-              key={product.title}
+              key={product.id}
             />
           ))}
         </motion.div>
@@ -91,7 +92,7 @@ export const HeroParallax = ({
             <ProductCard
               product={product}
               translate={translateX}
-              key={product.title}
+              key={product.id}
             />
           ))}
         </motion.div>
@@ -103,9 +104,15 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <div className=" mx-auto !py-10 md:py-40 px-4 w-full text-center flex flex-col items-center absolute top-[20%] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-      <h1 className="text-4xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400">
+      <ScrollFloat
+        animationDuration={1}
+        ease="back.inOut(2)"
+        scrollStart="center bottom+=50%"
+        scrollEnd="bottom bottom-=40%"
+        stagger={0.03}
+      >
         Featured Projects
-      </h1>
+      </ScrollFloat>
       <p className="max-w-2xl mx-auto text-base md:text-lg mt-6 text-neutral-300">
         Here are some of my recent projects. Click on any project to learn more.
       </p>
@@ -133,7 +140,7 @@ export const ProductCard = ({
       whileHover={{
         y: -20,
       }}
-      key={product.title}
+      key={product.id}
       className="group/product h-[320px] w-[30rem] relative shrink-0"
     >
       <a

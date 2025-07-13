@@ -312,12 +312,12 @@ export default function Home() {
   return (
     <main className="overflow-auto h-full">
       <AnimatedCursor
-        innerSize={12}
-        outerSize={80}
+        innerSize={10}
+        outerSize={30}
         color="255, 255, 255"
-        outerAlpha={1}
-        innerScale={0.7}
-        outerScale={2}
+        outerAlpha={0.2}
+        innerScale={0.8}
+        outerScale={1.5}
         outerStyle={{
           mixBlendMode: "exclusion",
           backgroundColor: "rgba(255, 255, 255, 0.8)",

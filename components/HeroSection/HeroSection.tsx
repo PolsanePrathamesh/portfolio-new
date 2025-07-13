@@ -4,6 +4,9 @@ import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import Hyperspeed from "@/Hyperspeed/Hyperspeed";
 import VariableProximity from "@/VariableProximity/VariableProximity";
 import { TypewriterEffect } from "@/components/ui/TypewriterEffect";
+import Lanyard from "../lanyard/Lanyard";
+import { FlipWords } from "../ui/flip-wrds";
+import { AnimatedTooltip } from "../ui/animated-tooltip";
 
 const HeroSection = () => {
   const [isSpeedingUp, setIsSpeedingUp] = useState(false);
@@ -57,9 +60,8 @@ const HeroSection = () => {
   };
 
   return (
-    <>
-      {/* Background animation - fixed position */}
-      <div className="fixed inset-0 -z-10">
+    <div className="relative z-10 min-h-screen w-full">
+      <div className="fixed inset-0 -z-[20]">
         <div
           className="absolute inset-0 w-full h-full"
           onMouseDown={handleSpeedUp}
@@ -106,25 +108,44 @@ const HeroSection = () => {
           />
         </div>
       </div>
+      <div className="flex h-full w-full">
+        {/* Right side - ID Card (35%) */}
+        <div className="absolute left-0 w-full h-screen z-1 ">
+          <div className="absolute left-0 top-0 bottom-0 w-full">
+            <Lanyard />
+          </div>
+        </div>
 
-      {/* Hero Content */}
-      <div className="relative z-10 min-h-screen w-full">
-        <motion.div
-          ref={containerRef}
-          className="flex min-h-screen w-full flex-col items-center justify-center px-4 text-center text-white"
-          style={{ opacity, scale }}
-          variants={revealVariants}
-          initial="hidden"
-          animate="visible"
-          onAnimationComplete={() => setStartTypewriter(true)}
-        >
-          <div className="relative z-10 max-w-4xl px-6">
-            <motion.div className="space-y-2" variants={childVariants}>
+        {/* Left side - Text Content (65%) */}
+        <div className="flex w-[65%] items-center justify-center !pl-5 z-4 min-h-screen">
+          <motion.div
+            ref={containerRef}
+            className="w-full px-8 text-white"
+            style={{ opacity, scale }}
+            variants={revealVariants}
+            initial="hidden"
+            animate="visible"
+            onAnimationComplete={() => setStartTypewriter(true)}
+          >
+            <motion.div className="space-y-2 !pl-10" variants={childVariants}>
               <motion.h3
-                className="text-2xl font-bold"
+                className="text-2xl font-bold !pl-1"
                 variants={childVariants}
               >
-                Hello, I'm
+                <VariableProximity
+                  label="Hello, I'm"
+                  className="block"
+                  fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                  toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                  containerRef={containerRef}
+                  radius={200}
+                  falloff="linear"
+                  style={{
+                    fontFamily: "var(--font-inter)",
+                    lineHeight: "1.1",
+                    letterSpacing: "-0.02em",
+                  }}
+                />
               </motion.h3>
               <motion.h1
                 className="mb-8 text-4xl font-bold md:text-6xl lg:text-7xl"
@@ -145,50 +166,98 @@ const HeroSection = () => {
                   }}
                 />
               </motion.h1>
-              <motion.h1
-                className="mb-8 text-2xl font-bold md:text-4xl lg:text-5xl"
-                variants={childVariants}
-              >
-                <VariableProximity
-                  label="Welcome to My Portfolio"
-                  className="block"
-                  fromFontVariationSettings="'wght' 400, 'opsz' 9"
-                  toFontVariationSettings="'wght' 1000, 'opsz' 40"
-                  containerRef={containerRef}
-                  radius={200}
-                  falloff="linear"
-                  style={{
-                    fontFamily: "var(--font-inter)",
-                    lineHeight: "1.1",
-                    letterSpacing: "-0.02em",
-                  }}
-                />
-              </motion.h1>
 
               <motion.div
-                className="mt-12 space-y-1 text-center"
+                className="mt-12 space-y-1 text-left"
                 variants={childVariants}
               >
-                {startTypewriter && (
-                  <TypewriterEffect
-                    texts={[
-                      "Passionate Mumbai-based software developer.",
-                      "Crafting innovative, user-friendly applications.",
-                      "Solving complex technical challenges expertly.",
-                      "Building impactful digital user experiences.",
-                    ]}
-                    className="block text-xl font-medium text-gray-300 md:text-2xl"
-                    typingSpeed={50}
-                    deletingSpeed={30}
-                    delayBetweenTexts={2000}
+                <div className="!text-4xl mx-auto font-normal text-gray-300 md:text-3xl">
+                  <VariableProximity
+                    label="I am a "
+                    className="block"
+                    fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                    toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                    containerRef={containerRef}
+                    radius={200}
+                    falloff="linear"
+                    style={{
+                      fontFamily: "var(--font-inter)",
+                      lineHeight: "1.1",
+                      letterSpacing: "-0.02em",
+                    }}
                   />
-                )}
+                  <FlipWords
+                    words={[
+                      "Innovative",
+                      "Efficient",
+                      "User-focused",
+                      "Impactful",
+                    ]}
+                  />{" "}
+                  <VariableProximity
+                    label="Software Developer"
+                    className="block"
+                    fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                    toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                    containerRef={containerRef}
+                    radius={200}
+                    falloff="linear"
+                    style={{
+                      fontFamily: "var(--font-inter)",
+                      lineHeight: "1.1",
+                      letterSpacing: "-0.02em",
+                    }}
+                  />
+                </div>
+
+                {/* Social Media Icons with Animated Tooltip */}
+                <motion.div className="!mt-8" variants={childVariants}>
+                  <AnimatedTooltip
+                    items={[
+                      {
+                        id: 1,
+                        name: "GitHub",
+                        designation: "@PolsanePrathamesh",
+                        image: "/icons/github.svg",
+                        url: "https://github.com/PolsanePrathamesh",
+                      },
+                      {
+                        id: 2,
+                        name: "LinkedIn",
+                        designation: "@prathamesh-polsane",
+                        image: "/icons/linkedIn.svg",
+                        url: "https://linkedin.com/in/prathamesh-polsane",
+                      },
+                      {
+                        id: 3,
+                        name: "Medium",
+                        designation: "@prathameshpolsane",
+                        image: "/icons/medium.svg",
+                        url: "https://medium.com/@prathameshpolsane",
+                      },
+                      {
+                        id: 4,
+                        name: "Dribbble",
+                        designation: "@Prathamesh26",
+                        image: "/icons/dribbble.svg",
+                        url: "https://dribbble.com/Prathamesh26",
+                      },
+                      {
+                        id: 5,
+                        name: "Email",
+                        designation: "prathameshpolsane@gmail.com",
+                        image: "/icons/gmail.svg",
+                        url: "mailto:prathameshpolsane@gmail.com",
+                      },
+                    ]}
+                  />
+                </motion.div>
               </motion.div>
             </motion.div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
