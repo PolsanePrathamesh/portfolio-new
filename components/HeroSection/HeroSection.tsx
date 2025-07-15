@@ -7,6 +7,7 @@ import { TypewriterEffect } from "@/components/ui/TypewriterEffect";
 import Lanyard from "../lanyard/Lanyard";
 import { FlipWords } from "../ui/flip-wrds";
 import { AnimatedTooltip } from "../ui/animated-tooltip";
+import { Spotlight } from "../ui/spotlight";
 
 const HeroSection = () => {
   const [isSpeedingUp, setIsSpeedingUp] = useState(false);
@@ -61,53 +62,11 @@ const HeroSection = () => {
 
   return (
     <div className="relative z-10 min-h-screen w-full">
-      <div className="fixed inset-0 -z-[20]">
-        <div
-          className="absolute inset-0 w-full h-full"
-          onMouseDown={handleSpeedUp}
-          onMouseUp={handleSlowDown}
-          onMouseLeave={handleSlowDown}
-        >
-          <Hyperspeed
-            effectOptions={{
-              isHyper: true,
-              distortion: "turbulentDistortion",
-              length: 400,
-              roadWidth: 12,
-              islandWidth: 1.5,
-              lanesPerRoad: 3,
-              fov: 90,
-              fovSpeedUp: 150,
-              speedUp: isSpeedingUp ? 3 : 1,
-              carLightsFade: 0.3,
-              totalSideLightSticks: 15,
-              lightPairsPerRoadWay: 30,
-              shoulderLinesWidthPercentage: 0.06,
-              brokenLinesWidthPercentage: 0.08,
-              brokenLinesLengthPercentage: 0.7,
-              lightStickWidth: [0.1, 0.3],
-              lightStickHeight: [1.2, 1.5],
-              movingAwaySpeed: [50, 70],
-              movingCloserSpeed: [-100, -140],
-              carLightsLength: [400 * 0.04, 400 * 0.15],
-              carLightsRadius: [0.04, 0.12],
-              carWidthPercentage: [0.4, 0.6],
-              carShiftX: [-0.5, 0.5],
-              carFloorSeparation: [0.1, 1],
-              colors: {
-                roadColor: 0x000000,
-                islandColor: 0x1a1a1a,
-                background: 0x1a1a2e,
-                shoulderLines: 0xffffff,
-                brokenLines: 0xffff00,
-                leftCars: [0xff6b6b, 0xff9e7d, 0xffb88c],
-                rightCars: [0x70a1ff, 0x7f8fa6, 0x95a5a6],
-                sticks: 0x4b7bec,
-              },
-            }}
-          />
-        </div>
-      </div>
+      <Spotlight
+        className="-top-40 left-0 md:-top-20 md:left-60 z-1000 spotlight"
+        fill="white"
+      />
+
       <div className="flex h-full w-full">
         {/* Right side - ID Card (35%) */}
         <div className="absolute left-0 w-full h-screen z-1 ">

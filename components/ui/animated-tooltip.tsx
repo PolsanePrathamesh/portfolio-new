@@ -79,7 +79,7 @@ export const AnimatedTooltip = ({ items }: AnimatedTooltipProps) => {
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="block !p-2 transition-all duration-300 rounded-lg bg-white hover:bg-white/20"
+            className="block !p-2 transition-all duration-300 rounded-lg bg-white "
           >
             <img
               src={item.image}

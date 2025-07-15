@@ -51,7 +51,7 @@ export const HeroParallax = ({
     springConfig
   );
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
+    useTransform(scrollYProgress, [0, 0], [-700, 500]),
     springConfig
   );
   return (
@@ -137,9 +137,6 @@ export const ProductCard = ({
       style={{
         x: translate,
       }}
-      whileHover={{
-        y: -20,
-      }}
       key={product.id}
       className="group/product h-[320px] w-[30rem] relative shrink-0 !m-1 "
     >
@@ -156,7 +153,7 @@ export const ProductCard = ({
         />
       </a>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
+      <h2 className="absolute bottom-4 right-4 opacity-0 group-hover/product:opacity-100 text-black bg-white !px-2 !py-1 !rounded-full">
         {product.title}
       </h2>
     </motion.div>

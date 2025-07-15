@@ -15,58 +15,52 @@ export default function Home() {
         <div>
           <div className="flex justify-between items-start mb-2">
             <div className="flex items-center gap-2">
-              <p className="text-lg font-medium text-neutral-300 dark:text-neutral-300 tracking-wide">
+              <div className="text-lg font-medium text-neutral-300 dark:text-neutral-300 tracking-wide">
                 Feb 2024 - Present | Software Engineer |
-                <LinkPreview
-                  url="https://unicoconnect.com"
-                  className="!text-white hover:!text-white/80 !font-medium !text-lg !ml-1"
-                >
-                  Unico Connect
-                </LinkPreview>
-              </p>
+              </div>
             </div>
           </div>
           <div className="border-b border-neutral-700 !mb-4 pb-2"></div>
           <div className="!space-y-4 !mb-2">
             <div className="flex flex-wrap gap-2">
-              <span className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
+              <div className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
                 Next.js
-              </span>
-              <span className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
+              </div>
+              <div className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
                 React.js
-              </span>
-              <span className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
+              </div>
+              <div className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
                 TypeScript
-              </span>
-              <span className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
+              </div>
+              <div className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
                 Tailwind CSS
-              </span>
-              <span className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
+              </div>
+              <div className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
                 React Query
-              </span>
-              <span className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
+              </div>
+              <div className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
                 Redux Toolkit
-              </span>
-              <span className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
+              </div>
+              <div className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
                 Zustand
-              </span>
-              <span className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
+              </div>
+              <div className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
                 ShadCn
-              </span>
-              <span className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
+              </div>
+              <div className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
                 Storybook
-              </span>
-              <span className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
+              </div>
+              <div className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
                 Jest
-              </span>
-              <span className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
+              </div>
+              <div className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
                 Git
-              </span>
-              <span className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
+              </div>
+              <div className="bg-blue-900/30 text-blue-400 text-xs !px-2 !py-1 rounded-full border border-blue-800/50">
                 Webflow
-              </span>
+              </div>
             </div>
-            <p className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
+            <div className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
               At Unico Connect, I spearheaded the development of the{" "}
               <LinkPreview
                 url="https://brain.edtech.unicoconnect.in/"
@@ -86,14 +80,12 @@ export default function Home() {
               with Next.js, React Query, Storybook, ShadCn, and an AI-powered
               chat, increasing productivity by 30% through AI-driven features
               and testing integrations. I revamped{" "}
-              <span className="border-b-2 border-neutral-300 !px-1 ">
-                <LinkPreview
-                  url="https://ebco.in"
-                  className="font-bold text-white"
-                >
-                  Ebco
-                </LinkPreview>{" "}
-              </span>
+              <LinkPreview
+                url="https://ebco.in"
+                className="font-bold text-white border-b-2 border-neutral-300 !px-1"
+              >
+                Ebco
+              </LinkPreview>
               's legacy website into a responsive e-commerce platform,{" "}
               <LinkPreview
                 url="https://ebco.in"
@@ -114,37 +106,7 @@ export default function Home() {
               coordinating directly with clients, and mentored junior developers
               to enforce best coding practices and introduce AI integration
               techniques.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-4 !pt-4">
-            <img
-              src="/projects/Brain2.png"
-              alt="highlands brain template"
-              width={500}
-              height={125}
-              className="h-8 w-[20rem] rounded-lg object-contain object-center  md:h-20 lg:h-30"
-            />
-            <img
-              src="/projects/Sergo.png"
-              alt="sergo template"
-              width={500}
-              height={125}
-              className="h-8 w-[20rem] rounded-lg object-contain object-center  md:h-20 lg:h-30"
-            />
-            <img
-              src="/projects/Ebco.png"
-              alt="ebco template"
-              width={500}
-              height={125}
-              className="h-8 w-[20rem] rounded-lg object-contain object-center  md:h-20 lg:h-30"
-            />
-            <img
-              src="/projects/MailBee.png"
-              alt="mailbee template"
-              width={500}
-              height={125}
-              className="h-8 w-[20rem] rounded-lg object-contain object-center  md:h-20 lg:h-30"
-            />
+            </div>
           </div>
         </div>
       ),
@@ -155,49 +117,43 @@ export default function Home() {
         <div>
           <div className="flex justify-between items-start mb-2">
             <div className="flex items-center gap-2">
-              <p className="text-lg font-medium text-neutral-300 dark:text-neutral-300 tracking-wide">
+              <div className="text-lg font-medium text-neutral-300 dark:text-neutral-300 tracking-wide">
                 June 2022 - Jan 2024 | Associate Software Engineer |
-                <LinkPreview
-                  url="https://codearray.tech"
-                  className="!text-white hover:!text-white/80 !font-medium !text-lg"
-                >
-                  Codearray Technologies Pvt Ltd
-                </LinkPreview>
-              </p>
+              </div>
             </div>
           </div>
           <div className="border-b border-neutral-700 !mb-4 pb-2"></div>
           <div className="!space-y-3 !mb-8">
             <div className="flex flex-wrap gap-2 !mb-4">
-              <span className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
+              <div className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
                 Next.js
-              </span>
-              <span className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
+              </div>
+              <div className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
                 React
-              </span>
-              <span className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
+              </div>
+              <div className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
                 GraphQL
-              </span>
-              <span className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
+              </div>
+              <div className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
                 D3
-              </span>
-              <span className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
+              </div>
+              <div className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
                 Tailwind CSS
-              </span>
-              <span className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
+              </div>
+              <div className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
                 Git
-              </span>
-              <span className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
+              </div>
+              <div className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
                 Vue.js
-              </span>
-              <span className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
+              </div>
+              <div className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
                 Nuxt.js
-              </span>
-              <span className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
+              </div>
+              <div className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
                 Postman
-              </span>
+              </div>
             </div>
-            <p className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
+            <div className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
               At Codearray Technologies Pvt Ltd, I architected a SaaS admin
               portal for{" "}
               <LinkPreview
@@ -216,7 +172,7 @@ export default function Home() {
                 className="border-b-2 border-neutral-300 !px-1 text-white hover:!text-white/80"
               >
                 CodeArray
-              </LinkPreview>{" "}
+              </LinkPreview>
               's website using Nuxt JS which was a responsive web service
               platform.{" "}
               <LinkPreview
@@ -231,30 +187,7 @@ export default function Home() {
               operational issues efficiently.I worked on a dashboard using
               Vue.js, Nuxt.js, JavaScript, and D3, enhancing data visualization
               and operational insights.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="/projects/Cense.png"
-              alt="cense template"
-              width={500}
-              height={125}
-              className="h-8 w-[20rem] rounded-lg object-contain object-center  md:h-20 lg:h-30"
-            />
-            <img
-              src="/projects/codearray.png"
-              alt="codearray template"
-              width={500}
-              height={125}
-              className="h-8 w-[20rem] rounded-lg object-contain object-center  md:h-20 lg:h-30"
-            />
-            <img
-              src="/projects/retail.png"
-              alt="retail template"
-              width={500}
-              height={125}
-              className="h-8 w-[20rem] rounded-lg object-contain object-center  md:h-20 lg:h-30"
-            />
+            </div>
           </div>
         </div>
       ),
@@ -305,7 +238,7 @@ export default function Home() {
       content: (
         <div className="space-y-4">
           <div className="flex items-center gap-2 border-b border-neutral-700 !mb-4 !pb-2">
-            <p className="text-lg font-medium text-neutral-300 dark:text-neutral-300 tracking-wide">
+            <div className="text-lg font-medium text-neutral-300 dark:text-neutral-300 tracking-wide">
               Dec 2019 | Web Designer |
               <LinkPreview
                 url="https://emtronglobal.com"
@@ -313,7 +246,7 @@ export default function Home() {
               >
                 Emtron Technologies
               </LinkPreview>
-            </p>
+            </div>
           </div>
           <div className="space-y-3">
             <div className="flex flex-wrap gap-2 !mb-4">

@@ -19,6 +19,7 @@ import {
 import ScrollFloat from "../ui/Scroll-float";
 import { WorldGlobe } from "../WorldGlobe/WorldGlobe";
 import { AnimatedTooltip } from "../ui/animated-tooltip";
+import { LampContainer } from "../ui/lamp";
 
 interface FormData {
   name: string;

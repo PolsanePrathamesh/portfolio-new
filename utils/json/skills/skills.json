@@ -21,10 +21,8 @@
         { "name": "PostgresSQL", "icon": "/PostgresSQL.svg", "color": "#336791" },
         { "name": "Docker", "icon": "/Docker.svg", "color": "#2496ED" }
       ],
-      "design": [
-        { "name": "Figma", "icon": "/Figma.svg", "color": "#F24E1E" }
-      ],
       "tools": [
+        { "name": "Figma", "icon": "/Figma.svg", "color": "#F24E1E" },
         { "name": "Jest", "icon": "/Jest.svg", "color": "#C21325" },
         { "name": "Storybook", "icon": "/Storybook.svg", "color": "#FF4785" },
         { "name": "Git", "icon": "/Git.svg", "color": "#F05032" },
