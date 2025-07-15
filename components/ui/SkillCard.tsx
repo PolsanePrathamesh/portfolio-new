@@ -81,7 +81,7 @@ export const SkillCard = ({ skill }: SkillCardProps) => {
             className="relative h-12 w-12 flex-shrink-0 bg-gray-800/50 rounded-lg flex items-center justify-center !p-2 transition-all duration-300"
             style={{
               boxShadow: `0 0 15px 5px ${skill.color}80`,
-              transition: "box-shadow 0.3s ease-in-out",
+              transition: "box-shadow 0.3s ease-in",
             }}
           >
             <Image
