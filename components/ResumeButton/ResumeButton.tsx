@@ -56,7 +56,7 @@ export const ResumeButton = () => {
         return (
           <>
             <Download className="w-5 h-5" />
-            <span>Download Resume</span>
+            <span>Resume</span>
           </>
         );
     }

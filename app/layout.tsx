@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { ResumeButton } from "@/components/ResumeButton/ResumeButton";
 import { Footer } from "@/components/Footer/Footer";
+import { FloatingNavbar } from "@/components/FloatingNavbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,6 +15,8 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "Portfolio | Prathamesh Polsane",
@@ -35,11 +39,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen`}
-      >
-        <main className="flex-1">{children}</main>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.variable} bg-black text-white relative`}>
+        <main className="relative">
+          {children}
+          <FloatingNavbar />
+        </main>
         <Footer />
         <ResumeButton />
       </body>

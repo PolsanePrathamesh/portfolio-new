@@ -4,13 +4,14 @@ import Link from "next/link";
 import projectsData from "@/utils/json/projects/projects.json";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
-interface PageProps {
-  params: { id: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
+interface ProjectPageProps {
+  params: Promise<{ id: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export default function ProjectDetails({ params }: PageProps) {
-  const project = projectsData.projects.find((p) => p.id === params.id);
+export default async function ProjectDetails({ params }: ProjectPageProps) {
+  const { id } = await params; // Await the params promise to get the id
+  const project = projectsData.projects.find((p) => p.id === id);
 
   if (!project) {
     notFound();
@@ -18,7 +19,7 @@ export default function ProjectDetails({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-black text-white pt-24 px-4 md:px-8 lg:px-12">
-      <div className=" mx-auto">
+      <div className="mx-auto">
         <div className="">
           <div className="!p-10">
             <ContainerScroll

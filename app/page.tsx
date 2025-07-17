@@ -334,12 +334,24 @@ export default function Home() {
           ".link",
         ]}
       />
-      <HeroSection />
-      <Project />
-      <About />
-      <TimelineDemo timelineData={timelineData} />
-      <Testimonials />
-      <ContactUs />
+      <section id="home" className="scroll-mt-20">
+        <HeroSection />
+      </section>
+      <section id="projects" className="scroll-mt-20">
+        <Project />
+      </section>
+      <section id="skills" className="scroll-mt-20">
+        <About />
+      </section>
+      <section id="experience" className="scroll-mt-20">
+        <TimelineDemo timelineData={timelineData} />
+      </section>
+      <section id="testimonials" className="scroll-mt-20">
+        <Testimonials />
+      </section>
+      <section id="contact" className="scroll-mt-20">
+        <ContactUs />
+      </section>
     </main>
   );
 }
