@@ -3,7 +3,7 @@
     {
       "id": "highlands-brain",
       "name": "Highlands Brain",
-      "link": "https://highlandsbrain.com",
+      "link": "https://www.highlandsbrain.com",
       "thumbnail": "/projects/Brain2.png",
       "techstack": ["Next.js", "React", "Redux Toolkit", "React Query", "Firebase", "Tailwind CSS", "TypeScript"],
       "details": "[existing details]"

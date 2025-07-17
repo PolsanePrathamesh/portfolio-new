@@ -12,7 +12,7 @@ export function TimelineDemo({
   timelineData: TimelineItem[];
 }) {
   return (
-    <div className="w-full  mx-auto py-12 px-4 z-10 bg-black relative">
+    <div className="w-full  mx-auto py-6 px-4 z-10 bg-black relative">
       <TimelineReveal data={timelineData} />
     </div>
   );

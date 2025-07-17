@@ -42,7 +42,7 @@ export const TimelineReveal = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <motion.div
-      className="w-full bg-black dark:bg-neutral-950 font-sans md:px-10 !p-20 !pt-0"
+      className="w-full bg-black dark:bg-neutral-950 font-sans md:px-10 !px-20 !py-5"
       ref={containerRef}
       initial="hidden"
       animate="visible"
@@ -71,7 +71,7 @@ export const TimelineReveal = ({ data }: { data: TimelineEntry[] }) => {
             variants={fadeVariants}
             whileInView="visible"
             viewport={{ once: false, amount: 0.2 }}
-            className="flex justify-start pt-10 md:pt-40 !gap-10 !mb-10"
+            className="flex justify-start pt-5 md:pt-20 !gap-5 !mb-10"
           >
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-lg lg:max-w-lg md:w-full">
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-transparent border border-neutral-700 dark:bg-black flex items-center justify-center">

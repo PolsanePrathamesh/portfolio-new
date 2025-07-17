@@ -2,7 +2,7 @@
 
 import React from "react";
 import { HeroParallax } from "@/components/ui/hero-parallax";
-import projectsData from "@/utils/json/skills/projects.json";
+import projectsData from "@/utils/json/projects/projects.json";
 
 const Project = () => {
   // Transform the projects data to match the HeroParallax expected format
@@ -14,7 +14,7 @@ const Project = () => {
   }));
 
   return (
-    <section id="projects" className="relative z-10 w-full bg-black py-20">
+    <section id="projects" className="relative z-10 w-full bg-black py-2">
       <div className=" mx-auto px-4">
         <div className="mx-auto">
           <div className="relative">

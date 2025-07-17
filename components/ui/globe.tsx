@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
 import ThreeGlobe from "three-globe";
 import { useThree, Canvas, extend } from "@react-three/fiber";
@@ -246,45 +246,85 @@ export function WebGLRendererConfig() {
   return null;
 }
 
-export function World(props: WorldProps) {
-  const { globeConfig } = props;
-  const scene = new Scene();
-  scene.fog = new Fog(0xffffff, 400, 2000);
-  return (
-    <Canvas
-      scene={scene}
-      camera={new PerspectiveCamera(50, aspect, 180, 1800)}
-      className="relative globeee"
-    >
-      <WebGLRendererConfig />
-      <ambientLight color={globeConfig.ambientLight} intensity={0.6} />
-      <directionalLight
-        color={globeConfig.directionalLeftLight}
-        position={new Vector3(-400, 100, 400)}
-      />
-      <directionalLight
-        color={globeConfig.directionalTopLight}
-        position={new Vector3(-200, 500, 200)}
-      />
-      <pointLight
-        color={globeConfig.pointLight}
-        position={new Vector3(-200, 500, 200)}
-        intensity={0.8}
-      />
-      <Globe {...props} />
-      <OrbitControls
-        enablePan={false}
-        enableZoom={false}
-        minDistance={cameraZ}
-        maxDistance={cameraZ}
-        autoRotateSpeed={1}
-        autoRotate={true}
-        minPolarAngle={Math.PI / 3.5}
-        maxPolarAngle={Math.PI - Math.PI / 3}
-      />
-    </Canvas>
-  );
-}
+// Memoize the scene and camera to prevent recreation on re-renders
+const scene = new Scene();
+scene.fog = new Fog(0xffffff, 400, 2000);
+const camera = new PerspectiveCamera(50, aspect, 180, 1800);
+
+// Memoize the World component to prevent unnecessary re-renders
+export const World = React.memo(
+  (props: WorldProps) => {
+    const { globeConfig } = props;
+
+    // Only update lights when config changes
+    const lights = React.useMemo(
+      () => ({
+        ambient: (
+          <ambientLight color={globeConfig.ambientLight} intensity={0.6} />
+        ),
+        directionalLeft: (
+          <directionalLight
+            color={globeConfig.directionalLeftLight}
+            position={new Vector3(-400, 100, 400)}
+          />
+        ),
+        directionalTop: (
+          <directionalLight
+            color={globeConfig.directionalTopLight}
+            position={new Vector3(-200, 500, 200)}
+          />
+        ),
+        point: (
+          <pointLight
+            color={globeConfig.pointLight}
+            position={new Vector3(-200, 500, 200)}
+            intensity={0.8}
+          />
+        ),
+      }),
+      [
+        globeConfig.ambientLight,
+        globeConfig.directionalLeftLight,
+        globeConfig.directionalTopLight,
+        globeConfig.pointLight,
+      ]
+    );
+
+    return (
+      <Canvas
+        scene={scene}
+        camera={camera}
+        className="relative globeee"
+        // Disable automatic pixel ratio adjustment on resize
+        dpr={[1, 2]}
+        // Disable automatic render on scroll
+        frameloop="demand"
+      >
+        <WebGLRendererConfig />
+        {Object.values(lights)}
+        <Globe {...props} />
+        <OrbitControls
+          enablePan={false}
+          enableZoom={false}
+          minDistance={cameraZ}
+          maxDistance={cameraZ}
+          autoRotateSpeed={1}
+          autoRotate={true}
+          minPolarAngle={Math.PI / 3.5}
+          maxPolarAngle={Math.PI - Math.PI / 3}
+        />
+      </Canvas>
+    );
+  },
+  (prevProps, nextProps) => {
+    // Only re-render if globeConfig changes
+    return (
+      JSON.stringify(prevProps.globeConfig) ===
+        JSON.stringify(nextProps.globeConfig) &&
+      JSON.stringify(prevProps.data) === JSON.stringify(nextProps.data)
+    );
+  }
+);
 
 export function hexToRgb(hex: string) {
   var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;

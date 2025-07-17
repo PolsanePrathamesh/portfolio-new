@@ -45,8 +45,6 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -145,6 +143,26 @@ html {
   }
 }
 
+/* Infinite Moving Cards Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 1rem));
+  }
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration, 40s) linear infinite;
+  animation-play-state: running;
+  animation-direction: var(--animation-direction, normal);
+}
+
+.animate-scroll:hover {
+  animation-play-state: var(--animation-play-state, running);
+}
+
 /* Ensure content below hero is visible */
 .content-below-hero {
   position: relative;
@@ -169,4 +187,17 @@ html {
 
 .globeee canvas {
   position: relative !important;
+}
+
+@import "tailwindcss";
+
+@theme inline {
+  --animate-scroll: scroll var(--animation-duration, 40s)
+    var(--animation-direction, forwards) linear infinite;
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
 }

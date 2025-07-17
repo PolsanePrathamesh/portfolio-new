@@ -38,7 +38,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative z-10 w-full bg-black !p-20 text-white"
+      className="relative z-10 w-full bg-black py-10 px-10 text-white"
     >
       <div className=" mx-auto px-4">
         <div className="mx-auto">

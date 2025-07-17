@@ -73,7 +73,7 @@ export const SkillCard = ({ skill }: SkillCardProps) => {
         containerClassName="h-full min-h-[80px] bg-gray-900/80 hover:bg-gray-900 transition-colors duration-300 border border-gray-800/50 hover:border-gray-700/50"
         className="h-full"
       >
-        <div className="flex items-center justify-between h-full !p-4 w-full">
+        <div className="flex items-center justify-between h-full !p-1 w-full">
           <motion.div
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}

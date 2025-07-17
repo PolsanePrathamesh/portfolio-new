@@ -97,7 +97,7 @@ export default function Home() {
               increase while managing the entire process independently. I also
               developed a{" "}
               <LinkPreview
-                url="https://stage.mymailbee.com/"
+                url="https://www.stage.mymailbee.com/"
                 className="border-b-2 border-neutral-300 !px-1 text-white hover:!text-white/80"
               >
                 Gmail plugin
@@ -138,7 +138,7 @@ export default function Home() {
                 D3
               </div>
               <div className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
-                Tailwind CSS
+                Bootstrap
               </div>
               <div className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
                 Git
@@ -151,6 +151,9 @@ export default function Home() {
               </div>
               <div className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
                 Postman
+              </div>
+              <div className="bg-purple-900/30 text-purple-400 text-xs !px-2 !py-1 rounded-full border border-purple-800/50">
+                Gitlab
               </div>
             </div>
             <div className="text-sm text-neutral-400 dark:text-neutral-400 leading-relaxed">
@@ -332,8 +335,8 @@ export default function Home() {
         ]}
       />
       <HeroSection />
-      <About />
       <Project />
+      <About />
       <TimelineDemo timelineData={timelineData} />
       <Testimonials />
       <ContactUs />

@@ -23,8 +23,12 @@
       ],
       "tools": [
         { "name": "Figma", "icon": "/Figma.svg", "color": "#F24E1E" },
+        { "name": "Socket.io", "icon": "/socket.svg", "color": "#ffffff" },
+        { "name": "AR/VR", "icon": "/AR-VR.svg", "color": "#aaaaaa" },
         { "name": "Jest", "icon": "/Jest.svg", "color": "#C21325" },
         { "name": "Storybook", "icon": "/Storybook.svg", "color": "#FF4785" },
+        { "name": "Framer Motion", "icon": "/framer-motion.svg", "color": "#aaaaaa" },
+        { "name": "Three.js", "icon": "/three.svg", "color": "#aaaaaa" },
         { "name": "Git", "icon": "/Git.svg", "color": "#F05032" },
         { "name": "GitHub", "icon": "/GitHub.svg", "color": "#444444" },
         { "name": "GitLab", "icon": "/GitLab.svg", "color": "#FC6D26" },

@@ -80,7 +80,7 @@ export default function ContactForm() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false }); // Set once: false for fade-out
   return (
-    <div className="relative w-full py-12 md:py-24 bg-black !pb-5 z-10 !px-5">
+    <div className="relative w-full py-4 md:py-8 bg-black !pb-5 z-10 !px-5">
       <div className="w-full mx-auto relative z-10 !px-4">
         {/* Title Section */}
         <motion.div
